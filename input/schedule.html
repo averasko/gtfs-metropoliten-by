@@ -1,0 +1,1263 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Информация" />
+<meta name="description" content="Информация" />
+
+<link href="/bitrix/cache/css/s1/inner/kernel_main/kernel_main.css?141224691743868" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/cache/css/s1/inner/template_674a2e7cedbe24090736512590496a9f/template_674a2e7cedbe24090736512590496a9f_f1ba4a1e08369caad7312214d75f624d.css?14948522987069" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<script type="text/javascript">if(!window.BX)window.BX={message:function(mess){if(typeof mess=='object') for(var i in mess) BX.message[i]=mess[i]; return true;}};</script>
+<script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+<script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','SITE_ID':'s1'});</script>
+
+
+<script type="text/javascript" src="/bitrix/cache/js/s1/inner/kernel_main/kernel_main.js?1412246801364319"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_db.js?140255936210954"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_frame_cache.js?140255936211308"></script>
+<script type="text/javascript">BX.setCSSList(['/bitrix/js/main/core/css/core.css','/bitrix/js/main/core/css/core_tooltip.css','/bitrix/js/main/core/css/core_popup.css','/bitrix/js/main/core/css/core_date.css']); </script>
+<script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core.js','/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/json/json2.min.js','/bitrix/js/main/core/core_ls.js','/bitrix/js/main/session.js','/bitrix/js/main/core/core_window.js','/bitrix/js/main/utils.js','/bitrix/js/main/core/core_tooltip.js','/bitrix/js/main/core/core_popup.js','/bitrix/js/main/core/core_date.js','/bitrix/js/main/core/core_dd.js']); </script>
+
+<script type="text/javascript" src="/bitrix/cache/js/s1/inner/template_78f5971173c4320ec9bc7e5ed8eb2693/template_78f5971173c4320ec9bc7e5ed8eb2693_bc3d70578128868ff8adc5bac7852de4.js?1402986626668"></script>
+<title>График</title>
+<link href="/bitrix/templates/.default/css/style.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.jpg" />
+<link rel="icon" type="image/x-icon" href="/bitrix/templates/.default/images/favicon.ico" />
+    <link href="/bitrix/templates/.default/css/slider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/bitrix/templates/.default/css/sliderkit-core.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="/bitrix/templates/.default/css/sliderkit-demos.css" media="screen, projection" />
+    <link href="/bitrix/templates/.default/css/lightbox.css" rel="stylesheet">
+    <link href="/bitrix/templates/.default/css/ui.totop.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/bitrix/templates/.default/js/jquery.slides.min.js"></script>
+    <script src="/bitrix/templates/.default/js/custom.js"></script>
+    <script src="/bitrix/templates/.default/js/jcarusel.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery.sliderkit.1.4.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery.mousewheel.min.js"></script>
+
+    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery.ui.totop.js"></script>
+    <script src="/bitrix/templates/.default/js/lightbox.js"></script>
+    <script>
+      function random_fon(){
+        m = parseInt(1);
+        n = parseInt(5);
+        return Math.floor( Math.random() * (5 - 1 + 1) ) + 1;
+      }
+
+      //alert(random_fon());
+
+      $(function(){
+      $('.wrap-all').css("background", 'url(/bitrix/templates/.default/images/bg_'+random_fon()+'.jpg) no-repeat center top');
+      });
+      </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $().UItoTop({ easingType: 'easeOutQuart' });
+      });
+      $(document).ready(function() {
+      //При изменениии масштаба/размера окна браузера
+      var width = document.documentElement.clientWidth; //Ширина экрана
+      var height = document.documentElement.clientHeight; //Высота экрана
+
+      if (height > 1000 && height < 1500) {
+
+				    $(".time-work p").css("font-size", "10px");
+				    $("#horizontal-multilevel-menu a").css("font-size", "10px");
+				    $("#dobyId *").css("font-size", "10px !important");
+				    } else if (height > 1500) {
+
+	$(".time-work p").css("font-size", "5px");
+	$("#horizontal-multilevel-menu a").css("font-size", "5px");
+	$("#dobyId *").css("font-size", "5px !important");
+	} else if (height < 1000) {
+
+			    $(".time-work p").css("font-size", "12px");
+			    $("#horizontal-multilevel-menu a").css("font-size", "12px");
+			    $("#dobyId *").css("font-size", "100% !important");
+			    }
+
+			    $().UItoTop({ easingType: 'easeOutQuart' });
+
+			    });
+
+			    window.onresize = function(){
+			    //При изменениии масштаба/размера окна браузера
+			    width = document.documentElement.clientWidth; //Ширина экрана
+			    height = document.documentElement.clientHeight; //Высота экрана
+
+			    $("#width").html(width);
+			    $("#height").html(height);
+
+			    if (height > 1000 && height < 1500) {
+							  $(".time-work p").css("font-size", "10px");
+							  $("#horizontal-multilevel-menu a").css("font-size", "10px");
+							  $("#dobyId *").css("font-size", "10px !important");
+							  } else if (height > 1500) {
+	    $(".time-work p").css("font-size", "5px");
+	    $("#horizontal-multilevel-menu a").css("font-size", "5px");
+	    $("#dobyId *").css("font-size", "5px !important");
+	    } else if (height < 1000) {
+				$(".time-work p").css("font-size", "12px");
+				$("#horizontal-multilevel-menu a").css("font-size", "12px");
+				$("#dobyId *").css("font-size", "100% !important");
+				}
+				}
+				</script>
+    <style>
+      .bx-composite-btn{
+      display: none !important;
+      }
+      </style>
+</head>
+
+<body id="dobyId">
+<div style="display: none;">
+  Width <span id="width"></span><br />
+  Height <span id="height"></span><br />
+</div>
+<header id="header">
+<div class="header-class">
+    <div class="header">
+        <div class="logo">
+	   <a href="/" ><img src="/bitrix/templates/.default/images/logo.png"  /></a>
+        </div>
+        <div class="header-right-block">
+          <div class="header-right-top-block">
+                <div class="time-work">
+
+<p>ВРЕМЯ РАБОТЫ МИНСКОГО МЕТРОПОЛИТЕНА: <span>5:30 - 00:40</span></p>
+
+                </div>
+                <div class="social">
+		  <a href="https://twitter.com/minskoemetro" target="_blank" ><img src="/bitrix/templates/.default/images/twitter.png"  /></a>
+                </div>
+                <div class="contact">
+
+<a href="http://metropoliten.by/contact/">Контакты</a>
+</div>
+            </div>
+            <nav>
+	       <ul id="horizontal-multilevel-menu">
+
+
+
+		 <li><a href="/o_metropolitene/" class="root-item">О метрополитене</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/about_director"><span></span>О руководителе</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/business_structure/"><span></span>Структура предприятия</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/history_of_the_development/"><span></span>История развития метрополитена</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/metro_today/"><span></span>Метро сегодня</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/prospects/"><span></span>Перспективы развития</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/museum/"><span></span>Музей</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o_metropolitene/video.php"><span></span>Видеоматериалы</a></li>
+
+
+
+
+
+		 </ul></li>
+
+		 <li><a href="/information/" class="root-item-selected">Информация</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li class="item-selected"><a href="/information/schedule/"><span></span>График</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/terms_of_use/"><span></span>Правила перевозок</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/fare/"><span></span>Оплата проезда</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/security/"><span></span>Безопасность</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/bezbarernaya-sreda/"><span></span>Безбарьерная среда</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/inspection_zone/"><span></span>Зоны досмотра</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/information/press-sluzhba"><span></span>Пресс-служба</a></li>
+
+
+
+
+
+		 </ul></li>
+
+		 <li><a href="/sxema-linii/" class="root-item">Схема линий</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li><a href="/sxema-linii/shemes_linii/"><span></span>Схемы линий</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/sxema-linii/53/"><span></span>Московская 1-я линия</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/sxema-linii/54/"><span></span>Автозаводская 2-я линия</a></li>
+
+
+
+
+
+		 </ul></li>
+
+		 <li><a href="/treatment_of_citizens/" class="root-item">Обращения граждан</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li><a href="/treatment_of_citizens/reception_personal_info/"><span></span>Прием по личным вопросам</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/treatment_of_citizens/one_window/"><span></span>Административные процедуры</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/treatment_of_citizens/electronic_ appeals_citizens/"><span></span>Электронные обращения граждан</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/treatment_of_citizens/faq/"><span></span>Часто задаваемые вопросы</a></li>
+
+
+
+
+
+		 </ul></li>
+
+		 <li><a href="/uslygi/" class="root-item">Услуги</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li><a href="/uslygi/advertising_services/"><span></span>Рекламные услуги</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/uslygi/lease_of_premises/"><span></span>Услуги аренды помещений</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/uslygi/transport_services/"><span></span>Автотранспортные услуги</a></li>
+
+
+
+
+
+		 </ul></li>
+
+
+		 <li><a href="/vacansy/" class="root-item">Вакансии</a></li>
+
+
+
+
+
+
+
+		 <li><a href="/o-nas/" class="root-item">О нас</a>
+		   <ul>
+
+
+
+
+
+
+
+		     <li><a href="/o-nas/meropriatija/"><span></span>Мероприятия</a></li>
+
+
+
+
+
+
+
+
+		     <li><a href="/o-nas/fotogalereja/"><span></span>Фотогалерея</a></li>
+
+
+
+
+
+		     </ul></li>
+</ul>
+<div class="menu-clear-left"></div>
+            </nav>
+        </div>
+    </div>
+</div>
+</header><!-- .header--><div class="wrap-all">
+    <div class="wrapper-inner">
+        <div class="wrapper-inner-content">
+            <div class="inner-block-left">
+                <div id="breadcrump">
+		  <ul class="breadcrumb breadcrumb__t"><li><a href="/" title="Главная">Главная</a></li><li class="divider">></li><li><a href="/information/" title="Информация">Информация</a></li><li class="divider">></li><li>График</li></ul>                </div>
+                <div class="inner-content">
+                    <h1>График</h1>
+                    <div class="inner-middle-content ">
+<span style="text-align: justify;"></span><span style="text-align: justify;"></span>
+<div style="text-align: center;"><span style="text-align: justify;">
+    <div style="text-align: center;">
+      <div style="text-align: left;">
+        <div style="text-align: center;">
+          <div style="text-align: left;">
+            <p class="MsoNormal" align="center" style="text-align: left;"><a href="/upload/doc/1 линия.pdf" target="_blank" >Расписание движения электропоездов 1 линии</a></p>
+
+            <p class="MsoNormal" align="center" style="text-align: left;"><a href="/upload/doc/2 линия.pdf" target="_blank" >Расписание движения электропоездов 2 линии</a></p>
+           </div>
+
+          <div style="text-align: left;">
+            <div>
+              <p class="MsoNormal" align="center" style="text-align: center;">
+                <br />
+               </p>
+             </div>
+
+            <div><font face="Arial, sans-serif">
+                <div style="font-size: 13.3333px; text-align: center;"><span style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;">ИНТЕРВАЛЫ </span></div>
+
+                <div style="text-align: center;">
+                  <div style="text-align: left;">
+                    <p class="MsoNormal" align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"> движения электропоездов по часам суток
+                        <br />
+                       по линии &laquo;Малиновка &ndash; Уручье&raquo;
+                        <br />
+                         Минского метрополитена    (<span style="color: red;">с 27.08.18г</span>.)<o:p></o:p></span></p>
+
+                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="584" style="border-collapse: collapse; border: none;">
+                      <tbody>
+                        <tr style="break-inside: avoid; height: 16.7pt;"> <td width="108" rowspan="2" style="width: 80.75pt; border-width: 1.5pt 1pt 1pt 1.5pt; border-color: windowtext; border-style: solid; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Часы<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">суток<o:p></o:p></span></b></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Рабочие дни<o:p></o:p></span></b></p>
+                           </td> <td width="104" valign="top" style="width: 77.95pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;"> </span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Пятницы<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif; color: red;"> </span></b></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Субботние дни<o:p></o:p></span></b></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Воскресные дни<o:p></o:p></span></b></p>
+                           </td> </tr>
+
+                        <tr style="break-inside: avoid; height: 34.65pt;"> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Интервал<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">движения<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">(мин)<o:p></o:p></span></b></p>
+                           </td> <td width="104" valign="top" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Интервал<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">движения<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">(мин)<o:p></o:p></span></b></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Интервал<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">движения<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">(мин)<o:p></o:p></span></b></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">Интервал<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">движения<o:p></o:p></span></b></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"><b><span style="font-size: 10pt; font-family: Arial, sans-serif;">(мин)<o:p></o:p></span></b></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">05.30-06.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12 поездов<o:p></o:p></span></p>
+                           </td> <td width="104" valign="top" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12 поездов<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">9 поездов<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">8 поездов<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">06.00-07.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0-2,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0-2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">7,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">07.00-08.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">08.00-09.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">09.00-10-00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0-4.0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0-4.0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">10.00-11.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4,5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">11.00-12.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12.00-13.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">13.00-14.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4.0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">14.00-15.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4,5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4,0-3,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">15.00-16.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">4,5-3,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">3,0-2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">16.00-17.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">3,0-2.0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">17.00-18.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2.0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">18.00-19.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2.0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0-2,5<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">19.00-20.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,0-5,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2,5-4,5<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">20.00-21.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0-6,5<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,0 -5,5<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">21.00-22.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">6,5-8,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">5,5-9,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">8,5<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">8,5<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">22.00-23.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">8,0-12,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">10,0-11,5<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">9,0-10,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">9,0-10,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">23.00-00.00<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">12,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">00.00-00.40<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">15,0<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">15,0<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">15,0<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">15,0<o:p></o:p></span></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">00.40-01.10<o:p></o:p></span></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2 поезда<o:p></o:p></span></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2 поезда<o:p></o:p></span></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2 поезда<o:p></o:p></span></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">2 поезда<o:p></o:p></span></p>
+                           </td> </tr>
+                       </tbody>
+                     </table>
+                   Время следования электропоезда от начальной станции до конечной 28 минут.</div>
+
+                  <div style="text-align: left;">
+                    <br />
+                   </div>
+
+                  <div style="text-align: left;">
+                    <p class="MsoNormal" align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">ИНТЕРВАЛЫ
+                        <br />
+                       движения электропоездов по часам суток
+                        <br />
+                       по линии «Могилевская – Каменная Горка»
+                        <br />
+                         Минского метрополитена    (<span style="color: red;">с 27.08.18г</span>.)</span></p>
+
+                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="584" style="border-collapse: collapse; border: none;">
+                      <tbody>
+                        <tr style="break-inside: avoid; height: 16.7pt;"> <td width="108" rowspan="2" style="width: 80.75pt; border-width: 1.5pt 1pt 1pt 1.5pt; border-color: windowtext; border-style: solid; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Часы<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">суток<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Рабочие дни<o:p></o:p></p>
+                           </td> <td width="104" valign="top" style="width: 77.95pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;"> </p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">Пятницы<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;"> </p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Субботние дни<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: 1.5pt solid windowtext; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 16.7pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Воскресные дни<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="break-inside: avoid; height: 34.65pt;"> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Интервал<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">движения<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">(мин)<o:p></o:p></p>
+                           </td> <td width="104" valign="top" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Интервал<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">движения<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">(мин)<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Интервал<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">движения<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">(мин)<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 34.65pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">Интервал<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">движения<o:p></o:p></p>
+
+                            <p class="MsoNormal" align="center" style="text-align: center;">(мин)<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">05.30-06.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">9 поездов<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">9 поездов<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">8поездов<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">7 поездов<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">06.00-07.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">7,0-2,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">7,0-2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">07.00-08.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">08.00-09.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0-2,5<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0-2,5<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">09.00-10-00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,5-5,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">3,0-5,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">10.00-11.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">11.00-12.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">12.00-13.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">13.00-14.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0-5,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5-4,5<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">14.00-15.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0-4,5<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">4,5-3,5<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">15.00-16.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">4,5-2,5<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">3,5-2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">16.00-17.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,5-2,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">17.00-18.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2.0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,5<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">18.00-18.30<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5<o:p></o:p></p>
+                           </td> <td width="132" valign="top" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">18.30-19.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2.0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,5<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">19.00-20.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2,0-4,5<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">3,0-5,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">20.00-21.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">4,5-6,5<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">5,0-6,5<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">7,5<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">21.00-22.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5-10,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">6,5-10,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">8,5<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">8,5<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">22.00-23.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">10,0-11,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">10,0-12,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">10,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">10,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">23.00-00.00<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">12,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">12,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">12,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">12,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">00.00-00.40<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">15,0<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">15,0<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">15,0<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">15,0<o:p></o:p></p>
+                           </td> </tr>
+
+                        <tr style="height: 19.85pt;"> <td width="108" style="width: 80.75pt; border-top: none; border-left: 1.5pt solid windowtext; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal">00.40-01.10<o:p></o:p></p>
+                           </td> <td width="117" style="width: 87.7pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2 поезда<o:p></o:p></p>
+                           </td> <td width="104" style="width: 77.95pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2 поезда<o:p></o:p></p>
+                           </td> <td width="123" style="width: 92.15pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2 поезда<o:p></o:p></p>
+                           </td> <td width="132" style="width: 99.2pt; border-top: none; border-left: none; border-bottom: 1.5pt solid windowtext; border-right: 1.5pt solid windowtext; padding: 0cm 5.4pt; height: 19.85pt;">
+                            <p class="MsoNormal" align="center" style="text-align: center;">2 поезда<o:p></o:p></p>
+                           </td> </tr>
+                       </tbody>
+                     </table>
+                   Время следования электропоезда от начальной станции до конечной 27 минут.</div>
+                 </div>
+               </font></div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </span></div>
+
+
+                    </div>
+                </div>
+
+                <div class="print">
+                    <a href="?print=y" target="blank">Версия для печати <span><img src="/bitrix/templates/.default/images/print.png" /></span></a>
+                </div>
+
+            </div>
+<div class="inner-block-right">
+
+               <h2>Информация </h2>
+
+                <nav>
+		  <ul>
+
+		    <li><a href="/information/schedule/" id="select"><span></span>График</a></li>
+
+		    <li><a href="/information/terms_of_use/"><span></span>Правила перевозок</a></li>
+
+		    <li><a href="/information/fare/"><span></span>Оплата проезда</a></li>
+
+		    <li><a href="/information/security/"><span></span>Безопасность</a></li>
+
+		    <li><a href="/information/bezbarernaya-sreda/"><span></span>Безбарьерная среда</a></li>
+
+		    <li><a href="/information/inspection_zone/"><span></span>Зоны досмотра</a></li>
+
+		    <li><a href="/information/press-sluzhba"><span></span>Пресс-служба</a></li>
+
+
+</ul>
+                </nav>
+
+                <div class="metro-map">
+		  <a href="/bitrix/templates/.default/images/karta.jpg" target="blank" > <img src="/bitrix/templates/.default/images/metro2.jpg"  /> </a>
+                </div>
+                <div class="middle-blocks-info">
+                    <div class="middle-info-title">
+                        <h2>полезная информация</h2>
+                    </div>
+                    <div class="middle-other-content">
+
+<ul>
+  <li>
+    <div> <a href="/information/fare/" >Оплата проезда в метро</a>
+      <p>Оплата в метро осуществляется при помощи жетонов и....</p>
+     <img src="/bitrix/templates/.default/images/img1.png"  /> </div>
+   </li>
+
+  <li>
+    <div> <a href="/information/terms_of_use/" >Правила перевозок</a>
+      <p>Последовательность входа (выхода) пассажиров к... </p>
+     <img src="/bitrix/templates/.default/images/img2.png"  /> </div>
+   </li>
+ </ul>
+<a class="other-new-link" href="/information/" >Другая полезная информация</a>
+                    </div>
+                </div>
+                <div class="vacansy">
+		   <a href="/vacansy/">Наши вакансии</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <footer id="footer">
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-contact">
+
+<p>ТЕЛЕФОН ГОРЯЧЕЙ ЛИНИИ: <span>219-52-09</span></p>
+
+<p>для получения справочно-консультационной информации</p>
+
+<p>(понедельник-пятница 9:00-12:00, 13:00-16:00)</p>
+
+            </div>
+            <div class="footer-right-block">
+                <nav>
+		  <ul>
+
+		    <li><a href="/index.php">Главная</a></li>
+
+		    <li><a href="/map/">Карта сайта</a></li>
+
+		    <li><a href="/contact/">Контакты</a></li>
+
+
+</ul>
+
+
+
+
+                 </nav>
+            </div>
+            <div class="footer-right-found">
+            <div class="search-form">
+<form action="/search/index.php">
+
+   <input id="title-search-input" class="placeholder" placeholder="Поиск по сайту" type="text" name="q" value="" size="15" maxlength="50" />
+
+
+    <input name="s" type="submit" value="" />
+
+
+</form>
+</div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+	  <span class="reserved">&copy; Государственное предприятие &quot;Минский Метрополитен&quot;, 2014 <span lang="EN-US" style="font-family: &quot;Times New Roman&quot;, serif;">&ndash;</span>2018</span>
+            <span class="creater">Разработка сайтов - <a href="http://www.artismedia.by/" target="_blank">ArtisMedia</span>
+        </div>
+    </div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25232663 = new Ya.Metrika({id:25232663,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNodacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25232663" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51789971-1', 'artismedia.biz');
+  ga('send', 'pageview');
+
+</script>
+</footer><!-- .footer -->
+
+</body>
+</html>
