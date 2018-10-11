@@ -7,9 +7,9 @@ URL = "http://metropoliten.by/information/schedule/"
 
 def extract_freq(s):
   s = s.replace(",", ".")
-  if re.match("[\.0-9]+-[\.0-9]+", s) or re.match("[\.0-9]+", s):
+  if re.match("[\.0-9]+-[\.0-9]+$", s) or re.match("[\.0-9]+$", s):
     if re.search("-", s):
-      pattern = "([\.0-9]+)-([\.0-9]+)"
+      pattern = "([\.0-9]+)-([\.0-9]+)$"
       s_ab = re.findall(pattern, s)
       s_from = float(s_ab[0][0])
       s_to = float(s_ab[0][1])
@@ -53,18 +53,32 @@ def apply_on_column(index, func, interval):
 def apply_extract_time_on_first_column(interval):
   return apply_on_column(0, extract_time, interval)
 
-def apply_on_column_in_list(index, func, intervals):
+# OMG OMG!!! need to figure out how to use partially filled functions in py
+def apply_on_column_in_list(intervals):
   return list(map(apply_extract_time_on_first_column, intervals))
 
 def split_time(intervals):
-  return apply_on_column_in_list(0, extract_time, intervals)
+  return apply_on_column_in_list(intervals)
 
+def apply_extract_freq_on_oneplus_column(interval):
+  interval = apply_on_column(1, extract_freq, interval)
+  interval = apply_on_column(2, extract_freq, interval)
+  interval = apply_on_column(3, extract_freq, interval)
+  interval = apply_on_column(4, extract_freq, interval)
+  return interval
+
+# OMG OMG!!! need to figure out how to use partially filled functions in py
+def apply_on_column_in_list_2(intervals):
+  return list(map(apply_extract_freq_on_oneplus_column, intervals))
+
+def split_freqs(intervals):
+  return apply_on_column_in_list_2(intervals)
 
 
 
 intervals = extract_schedule()
-
 intervals = split_time(intervals)
+intervals = split_freqs(intervals)
 
 
 for interval in intervals:
