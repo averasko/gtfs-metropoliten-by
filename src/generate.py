@@ -60,12 +60,8 @@ def apply_on_column(index, func, interval):
 def apply_extract_time_on_first_column(interval):
   return apply_on_column(0, extract_time, interval)
 
-# OMG OMG!!! need to figure out how to use partially filled functions in py
-def apply_on_column_in_list(intervals):
-  return list(map(apply_extract_time_on_first_column, intervals))
-
 def split_time(intervals):
-  return apply_on_column_in_list(intervals)
+  return apply_on_column_in_list(apply_extract_time_on_first_column, intervals)
 
 def apply_extract_freq_on_oneplus_column(interval):
   interval = apply_on_column(1, extract_freq, interval)
@@ -74,12 +70,12 @@ def apply_extract_freq_on_oneplus_column(interval):
   interval = apply_on_column(4, extract_freq, interval)
   return interval
 
-# OMG OMG!!! need to figure out how to use partially filled functions in py
-def apply_on_column_in_list_2(intervals):
-  return list(map(apply_extract_freq_on_oneplus_column, intervals))
+
+def apply_on_column_in_list(func, intervals):
+  return list(map(func, intervals))
 
 def split_freqs(intervals):
-  return apply_on_column_in_list_2(intervals)
+  return apply_on_column_in_list(apply_extract_freq_on_oneplus_column, intervals)
 
 
 
