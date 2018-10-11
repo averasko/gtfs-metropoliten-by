@@ -1,8 +1,15 @@
+# - *- coding: utf- 8 - *-
+
 import urllib
 import re
 
-TEST_URL = "file:../input/schedule.html"
+TEST_URL = "file:input/schedule.html"
 URL = "http://metropoliten.by/information/schedule/"
+
+# loading STOPS data
+with open('./data/stops.txt', 'r') as file_stops:
+  STOP_HEADERS = file_stops.readline().split(',')
+  STOPS = map(lambda l: l.rstrip('\r\n').split(','), file_stops.readlines())
 
 
 def extract_freq(s):
@@ -83,7 +90,6 @@ intervals = split_freqs(intervals)
 
 for interval in intervals:
   print(interval)
-
 
 
 #print(extract_freq("5,0-7.0"))

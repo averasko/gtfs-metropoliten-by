@@ -1,2 +1,2 @@
 route_id,route_short_name,route_long_name,route_type
-R1,"R1","Уручча - Малиновка",1
+R1,"R1","Уручье - Малиновка",1
